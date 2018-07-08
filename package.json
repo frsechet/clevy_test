@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jterrazz/clevy_test#readme",
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "mysql": "^2.15.0"
   }
 }
