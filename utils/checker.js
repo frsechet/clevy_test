@@ -5,4 +5,4 @@ exports.inputIsValid = toParse => {
   };
   
   return true;
-}
+};

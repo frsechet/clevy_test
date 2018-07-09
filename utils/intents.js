@@ -7,7 +7,7 @@ module.exports = {
     if (intent === 'ask-creator') {
       const randomName = await apiClient.getRandomName();
       return answer.replace('${name}', randomName);
-    }
+    };
     
     return answer;
   },
@@ -37,4 +37,4 @@ module.exports = {
     
     return null;
   }
-}
+};

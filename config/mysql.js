@@ -4,4 +4,4 @@ module.exports = {
 	"user": "root",
 	"password": "password",
 	"database": "clevy-simple-test",
-}
+};
