@@ -16,11 +16,11 @@ mysql -u USER -p < setup/mysql-init.sql
 ```
 Configure your database connection settings in the config/mysql.js file ([see the config section](#mysql)).
 
-For MySQL 8 users, you need to allow connections:
+For MySQL 8 users, you need to allow connections with:
 ``` bash
-# In the MySQL Client
+# In the MySQL Client (mysql -u USER -p)
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'
-# In the case the user is root
+# Exemple if user is root and password is password
 ```
 
 ## How to use
@@ -36,12 +36,12 @@ Config file in config/mysql.js
 ``` javascript
 // Exemple
 module.exports = {
-	"host": "127.0.0.1",
-	"port": 3306,
-	"user": "root",
-	"password": "password",
-	"database": "clevy-simple-test",
-}
+	host: '127.0.0.1',
+	port: 3306,
+	user: 'root',
+	password: 'password',
+	database: 'clevy-simple-test',
+};
 ```
 
 ### API Token

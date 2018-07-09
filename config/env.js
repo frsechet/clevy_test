@@ -18,7 +18,7 @@ try {
    * { intent: '', answer: '' }
    */
   const answersData = fs.readFileSync('./config/answers.csv', encoding);
-  const answersArray = answersData.split("\n");
+  const answersArray = answersData.split('\n');
   let validAnswers = [];
   
   answersArray.forEach((answerLine) => {

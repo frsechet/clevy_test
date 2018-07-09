@@ -17,7 +17,7 @@ module.exports = {
         if (err) {
           return reject(err);
         } else if (result.affectedRows == 0) {
-          return reject(Error("Interaction was not saved to database"));
+          return reject(Error('Interaction was not saved to database'));
         };
         
         return resolve();
