@@ -32,7 +32,7 @@ The bot stores interaction logs in the table `interaction-logs`.
 ## Configuration
 
 ### MySQL
-Connection config file in config/mysql.js
+Config file in config/mysql.js
 ``` javascript
 // Exemple
 module.exports = {
@@ -49,6 +49,9 @@ API Tokens are stored in files the `config` folder.
 - `recast.key` : Recast API
 
 For a simplicity purpose I used files to store token, it would be more secure to use environment variables in production.
+
+### CSV file
+The bot answers are located in the config/answers.csv.
 
 ## Dependencies
 - NodeJS >= 8.9
