@@ -12,6 +12,7 @@ const userInput = process.argv[2];
 
 const runBot = async () => {
   try {
+    // Get intents ordered by probability
     const orderedIntents = await apiClient.getIntents(userInput);
     const intent = intentsUtil.getFirstMatchingIntent(orderedIntents);
     const answer = intentsUtil.getAnswerForIntent(intent);
