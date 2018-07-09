@@ -18,9 +18,9 @@ const runBot = async () => {
     const formattedAnswer = await intentsUtil.formatAnswer(intent, answer);
 
     if (formattedAnswer) {
-      console.log('I don\'t understand your question, try another one ?');
-    } else {
       console.log(formattedAnswer);
+    } else {
+      console.log('I don\'t understand your question, try another one ?');
     }
 
     // Logging all interactions (even with no answer)
