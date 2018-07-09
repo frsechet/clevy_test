@@ -12,7 +12,7 @@ mysql -u USER -p < config/mysql.sql
 # Replace USER by a username allowed to make changes or use root
 # use -p if you need a password
 ```
-Configure your database connection settings in the config/mysql.js file ([see the config section](###mysql))
+Configure your database connection settings in the config/mysql.js file ([see the config section](#mysql))
 
 For MySQL 8 users, you need to allow connections:
 ``` bash
