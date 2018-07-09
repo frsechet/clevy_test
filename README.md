@@ -45,7 +45,7 @@ module.exports = {
 ```
 
 ### API Token
-API Tokens are stored in files the `config` folder.
+API Tokens are stored the `config` folder.
 - `recast.key` : Recast API
 
 For a simplicity purpose I used files to store token, it would be more secure to use environment variables in production.
