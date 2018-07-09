@@ -1,4 +1,3 @@
-const ENV = require('./config/env');
 const apiClient = require('./api-client');
 const logger = require('./utils/logger');
 const checker = require('./utils/checker');
@@ -6,8 +5,8 @@ const intentsUtil = require('./utils/intents');
 
 if (process.argv.length !== 3) {
   console.error('This bot requires exactly 1 argument, for exemple try:\nnode bot.js "are you a bot?"');
-  return;
-};
+  process.exit();
+}
 
 const userInput = process.argv[2];
 
@@ -18,9 +17,12 @@ const runBot = async () => {
     const answer = intentsUtil.getAnswerForIntent(intent);
     const formattedAnswer = await intentsUtil.formatAnswer(intent, answer);
 
-    const answerLog = formattedAnswer ? formattedAnswer : 'I don\'t understand your question, try another one ?';
-    console.log(answerLog);
-    
+    if (formattedAnswer) {
+      console.log('I don\'t understand your question, try another one ?');
+    } else {
+      console.log(formattedAnswer);
+    }
+
     // Logging all interactions (even with no answer)
     await logger.saveInteraction(userInput, formattedAnswer);
   } catch (error) {
@@ -28,7 +30,7 @@ const runBot = async () => {
   } finally {
     process.exit();
   }
-}
+};
 
 if (checker.inputIsValid(userInput)) {
   runBot();
