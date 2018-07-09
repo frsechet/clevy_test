@@ -1,5 +1,4 @@
 const ENV = require('./config/env');
-// check all requires are used
 const apiClient = require('./api-client');
 const logger = require('./utils/logger');
 const checker = require('./utils/checker');

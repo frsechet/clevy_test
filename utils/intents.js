@@ -14,10 +14,9 @@ const intentsUtil = {
   
   /**
    * The first intent to find a match in the local answers db return the answer
-   * If nothing matches, returns null
+   * Returns null ideaf nothing matches
    */
   getFirstMatchingIntent: (intents) => {
-    // Can't use forEach to exit when solution is found
     for (var i = 0; i < intents.length; i++) {
       const answer = intentsUtil.getAnswerForIntent(intents[i]);
       if (answer) {
