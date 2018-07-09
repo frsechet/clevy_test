@@ -5,7 +5,12 @@ const recastAuthHeaders = {
   Authorization: `Token ${ENV.recastApi.token}`
 };
 
-// Return the nested property of an object, null if error
+/**
+ * Return the nested property of an object, or null if error
+ * @param  {Array of string} path
+ * @param  {Object} baseObject
+ * @return {[Any, null]}
+ */
 const getNestedProperty = (path, baseObject) => {
   return path.reduce((currentObject, currentProperty) => {
     return (currentObject && currentObject[currentProperty]) ? currentObject[currentProperty] : null;
@@ -37,11 +42,10 @@ module.exports = {
         text: userInput
       }
     };
+    
     let res = await axios(config);
-
-    // TODO Remove
     const intents = getNestedProperty(['data', 'results', 'intents'], res);
-
+    
     if (!intents || !Array.isArray(intents)) {
       throw Error('Couldn\'t parse Recast intents');
     };

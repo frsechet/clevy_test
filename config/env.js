@@ -14,7 +14,7 @@ const ENV = {
 
 try {
   /**
-   * Cache answers from .csv file synchronously, with format:
+   * Cache answers from disk synchronously, with format:
    * { intent: '', answer: '' }
    */
   const answersData = fs.readFileSync('./config/answers.csv', encoding);
@@ -39,7 +39,7 @@ try {
   
   ENV.answers = validAnswers;
   
-  // Cache API keys from file synchronously
+  // Cache API keys from disk synchronously
   ENV.recastApi.token = fs.readFileSync('./config/recast.key', encoding);
 } catch (error) {
   if (error.code === 'ENOENT') {

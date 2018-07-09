@@ -54,6 +54,6 @@ For a simplicity purpose I used files to store token, it would be more secure to
 The bot answers are located in the config/answers.csv.
 
 ## Dependencies
-- NodeJS >= 8.9
+- NodeJS (Tested on >= 8.9)
 - Axios
-- MySQL
+- MySQL (Tested on MySQL 8, should work with lower versions)

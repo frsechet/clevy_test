@@ -1,8 +1,8 @@
 const ENV = require('../config/env');
 const apiClient = require('../api-client');
 
-// Check is called utils everywhere
-const intentsUtil = {
+module.exports = {
+  // Return a formatted answer (String)
   formatAnswer: async (intent, answer) => {
     if (intent === 'ask-creator') {
       const randomName = await apiClient.getRandomName();
@@ -12,10 +12,7 @@ const intentsUtil = {
     return answer;
   },
   
-  /**
-   * The first intent to find a match in the local answers db return the answer
-   * Returns null ideaf nothing matches
-   */
+  // Return the first intent known (String or null)
   getFirstMatchingIntent: (intents) => {
     for (var i = 0; i < intents.length; i++) {
       const answer = intentsUtil.getAnswerForIntent(intents[i]);
@@ -27,6 +24,7 @@ const intentsUtil = {
     return null;
   },
 
+  // Return the answer (String or null)
   getAnswerForIntent: (intent) => {
     if (intent) {
       for (var i = 0; i < ENV.answers.length; i++) {
@@ -40,5 +38,3 @@ const intentsUtil = {
     return null;
   }
 }
-
-module.exports = intentsUtil;
