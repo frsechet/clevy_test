@@ -6,13 +6,15 @@ The goal of this simple exercise is to create a very basic chatbot, that is able
 2. Run `npm install` to install dependencies
 3. Configure the MySQL Database
 
-Install MySQL. Init the database with the following command:
+Install MySQL.
+
+The default database name is `clevy-simple-test`. Init the database with the following command:
 ``` bash
-mysql -u USER -p < config/mysql.sql
+mysql -u USER -p < setup/mysql-init.sql
 # Replace USER by a username allowed to make changes or use root
 # use -p if you need a password
 ```
-Configure your database connection settings in the config/mysql.js file ([see the config section](#mysql))
+Configure your database connection settings in the config/mysql.js file ([see the config section](#mysql)).
 
 For MySQL 8 users, you need to allow connections:
 ``` bash
@@ -25,6 +27,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password
 ``` bash
 node bot.js "are you a bot?"
 ```
+The bot stores interaction logs in the table `interaction-logs`.
 
 ## Configuration
 
@@ -47,3 +50,7 @@ API Tokens are stored in files the `config` folder.
 
 For a simplicity purpose I used files to store token, it would be more secure to use environment variables in production.
 
+## Dependencies
+- NodeJS >= 8.9
+- Axios
+- MySQL
