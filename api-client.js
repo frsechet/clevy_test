@@ -43,11 +43,11 @@ module.exports = {
       }
     };
     
-    let res = await axios(config);
+    const res = await axios(config);
     const intents = getNestedProperty(['data', 'results', 'intents'], res);
     
     if (!intents || !Array.isArray(intents)) {
-      throw Error('Couldn\'t parse Recast intents');
+      throw Error('API ERROR: Couldn\'t parse Recast intents');
     };
 
     return getCleanIntents(intents);

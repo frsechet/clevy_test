@@ -21,7 +21,7 @@ const runBot = async () => {
     const answerLog = formattedAnswer ? formattedAnswer : 'I don\'t understand your question, try another one ?';
     console.log(answerLog);
     
-    // Logging all interactions, with no answer, we only log the question
+    // Logging all interactions (even with no answer)
     await logger.saveInteraction(userInput, formattedAnswer);
   } catch (error) {
     console.error(error);

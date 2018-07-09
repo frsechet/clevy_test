@@ -8,7 +8,7 @@ The goal of this simple exercise is to create a very basic chatbot, that is able
 
 Install MySQL.
 
-The default database name is `clevy-simple-test`. Init the database with the following command:
+The default database name is `clevy-simple-test`, check if it's available. Init the database with the following command:
 ``` bash
 mysql -u USER -p < setup/mysql-init.sql
 # Replace USER by a username allowed to make changes or use root
@@ -51,7 +51,9 @@ API Tokens are stored in files the `config` folder.
 For a simplicity purpose I used files to store token, it would be more secure to use environment variables in production.
 
 ### CSV file
-The bot answers are located in the config/answers.csv.
+The bot answers are located in the config/answers.csv. The first column contains intents, and the second answers.
+
+The program works if no answers are valid, but the bot will never understand a question.
 
 ## Dependencies
 - NodeJS (Tested on >= 8.9)

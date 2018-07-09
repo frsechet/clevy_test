@@ -4,7 +4,7 @@ const config = require('../config/mysql');
 const connection = mysql.createConnection(config);
 
 module.exports = {
-  //Permanently store an interaction
+  // Permanently store an interaction
   saveInteraction: (question, answer) => {
     return new Promise((resolve, reject) => {
       const query = 'INSERT INTO `interaction-logs` SET ?';
@@ -21,7 +21,7 @@ module.exports = {
         };
         
         return resolve();
-      })
+      });
     });
   }
 };

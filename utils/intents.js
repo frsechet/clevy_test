@@ -12,10 +12,13 @@ module.exports = {
     return answer;
   },
   
-  // Return the first intent known (String or null)
-  getFirstMatchingIntent: (intents) => {
+  /**
+   * Return the first intent known (String or null)
+   * Uses 'for' to return when we find an answer
+   */
+  getFirstMatchingIntent: function(intents) {
     for (var i = 0; i < intents.length; i++) {
-      const answer = intentsUtil.getAnswerForIntent(intents[i]);
+      const answer = this.getAnswerForIntent(intents[i]);
       if (answer) {
         return intents[i];
       };

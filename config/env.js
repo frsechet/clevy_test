@@ -22,19 +22,16 @@ try {
   let validAnswers = [];
   
   answersArray.forEach((answerLine) => {
-    const separatorPosition = answerLine.indexOf(';');
+    const answerSplited = answerLine.split(';');
     
-    if (separatorPosition > -1) {
-      let intent = answerLine.substring(0, separatorPosition);
-      let answer = answerLine.substring(separatorPosition + 1, answerLine.length);
+    if (answerSplited.length >= 2) {
+      let intent = answerSplited[0];
+      let answer = answerSplited[1];
       
       if (intent.length > 0 && answer.length > 0) {
-        validAnswers.push({
-          intent: intent,
-          answer: answer
-        });
+        validAnswers.push({ intent, answer });
       };
-    };
+    }
   });
   
   ENV.answers = validAnswers;
