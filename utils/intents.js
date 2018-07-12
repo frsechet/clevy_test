@@ -3,7 +3,7 @@ const apiClient = require('../api-client');
 
 module.exports = {
   // Return a formatted answer (String)
-  formatAnswer: async (intent, answer) => {
+   async formatAnswer (intent, answer) {
     if (intent === 'ask-creator') {
       const randomName = await apiClient.getRandomName();
       return answer.replace('${name}', randomName);
